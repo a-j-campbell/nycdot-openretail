@@ -123,24 +123,6 @@
                                 survey123WebForm.setQuestionValue(validation_field_invalid)
                                 is_valid = false
                             }
-                        } else if (v.field == fse_form_field) {
-                            if (v.value.length == fse_value_length){
-                                if (v.value in fse_features) {
-                                    console.info("FSE Number has not been previously submitted and is valid.")
-                                    console.info("FSE Info: " + v.value + "Name: " + fse_features[v.value]['restaurantName'])
-                                    survey123WebForm.setQuestionValue(fsevalidation_field_valid)
-                                    survey123WebForm.setQuestionValue({'restaurantName' : fse_features[v.value]['restaurantName']})
-                                    survey123WebForm.setQuestionValue({'bizName' : fse_features[v.value]['bizName']})
-                                    survey123WebForm.setQuestionValue({'bizDBA' : fse_features[v.value]['bizName']})
-                                    survey123WebForm.setQuestionValue({'bizBldgNum' : fse_features[v.value]['bizBldgNum']})
-                                    survey123WebForm.setQuestionValue({'bizStreetName' : fse_features[v.value]['bizStreetName']})
-                                    survey123WebForm.setQuestionValue({'bizBoro' : fse_features[v.value]['bizBoro']})
-                                    survey123WebForm.setQuestionValue({'bizZip' : fse_features[v.value]['bizZip']})
-                                } else {
-                                    console.info("FSE Number has not been previously submitted and is not valid.")
-                                    survey123WebForm.setQuestionValue(fsevalidation_field_invalid)
-                                }
-                            }
                         }
                     }
                 });
