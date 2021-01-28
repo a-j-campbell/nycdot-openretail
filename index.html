@@ -39,7 +39,7 @@
             var fse_svc_filter = "1=1"
             // Information about the form
             var bid_form_field = "bidNumber"
-            var fse_form_field = "FSE"
+            var fse_form_field = "fseNumber"
             var bid_value_length = 27 // number of characters that valid BID number has
             var fse_value_length = 8 // number of characters that valid FSE number has
             var fsevalidation_field_valid = {'fseNumberValidation':'Valid'}    // field to be updated, and value to set it to, if fse passes validation
@@ -122,6 +122,16 @@
                                 console.info("Bid invalid.")
                                 survey123WebForm.setQuestionValue(validation_field_invalid)
                                 is_valid = false
+                            }
+                        } else if (v.field == fse_form_field) {
+                            if (v.value.length == fse_value_length){
+                                if (fse_list.indexOf(v.value) >= 0) {
+                                    console.info("FSE Number has not been previously submitted and is valid.")
+                                    survey123WebForm.setQuestionValue(fsevalidation_field_valid)
+                                } else {
+                                    console.info("FSE Number has not been previously submitted and is not valid.")
+                                    survey123WebForm.setQuestionValue(fsevalidation_field_invalid)
+                                }
                             }
                         }
                     }
