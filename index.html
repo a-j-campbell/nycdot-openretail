@@ -124,7 +124,7 @@
                                 is_valid = false
                             }
                         } else if (v.field == fse_form_field) {
-                            if (fse_value_length.contains(v.value.length)){
+                            if (fse_value_length.indexOf(v.value.length) >= 0){
                                 if (fse_list.indexOf(v.value) >= 0) {
                                     console.info("FSE Number has not been previously submitted and is valid.")
                                     survey123WebForm.setQuestionValue(fsevalidation_field_valid)
