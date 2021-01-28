@@ -41,7 +41,7 @@
             var bid_form_field = "bidNumber"
             var fse_form_field = "fseNumber"
             var bid_value_length = 27 // number of characters that valid BID number has
-            var fse_value_length = 8 // number of characters that valid FSE number has
+            var fse_value_length = [7,8] // number of characters that valid FSE number has
             var fsevalidation_field_valid = {'fseNumberValidation':'Valid'}    // field to be updated, and value to set it to, if fse passes validation
             var fsevalidation_field_invalid = {'fseNumberValidation':'Invalid'} // field to be updated, and value to set it to, if fse fails validation
             var fsevalidation_field_exists = {'fseNumberValidation':'already exists. Please contact NYCDOT to review your previous application.'} // field to be updated, and value to set it to, if fse already exists
@@ -124,7 +124,7 @@
                                 is_valid = false
                             }
                         } else if (v.field == fse_form_field) {
-                            if (v.value.length == fse_value_length){
+                            if (fse_value_length.contains(v.value.length)){
                                 if (fse_list.indexOf(v.value) >= 0) {
                                     console.info("FSE Number has not been previously submitted and is valid.")
                                     survey123WebForm.setQuestionValue(fsevalidation_field_valid)
