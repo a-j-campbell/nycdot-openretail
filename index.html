@@ -128,6 +128,12 @@
                                 if (v.value in fse_features) {
                                     console.info("FSE Number has not been previously submitted and is valid.")
                                     survey123WebForm.setQuestionValue(fsevalidation_field_valid)
+                                    survey123WebForm.setQuestionValue({'retailName' : fse_features[v.value]['restaurantName']})
+                                    survey123WebForm.setQuestionValue({'bizName' : fse_features[v.value]['bizName']})
+                                    survey123WebForm.setQuestionValue({'bizBldgNum' : fse_features[v.value]['bizBldgNum']})
+                                    survey123WebForm.setQuestionValue({'bizStreetName' : fse_features[v.value]['bizStreetName']})
+                                    survey123WebForm.setQuestionValue({'bizBoro' : fse_features[v.value]['bizBoro']})
+                                    survey123WebForm.setQuestionValue({'bizZip' : fse_features[v.value]['bizZip']})
                                 } else {
                                     console.info("FSE Number has not been previously submitted and is not valid.")
                                     survey123WebForm.setQuestionValue(fsevalidation_field_invalid)
